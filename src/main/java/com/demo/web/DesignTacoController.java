@@ -1,7 +1,7 @@
 package com.demo.web;
 
-import com.demo.Ingredient;
-import com.demo.Taco;
+import com.demo.data.Ingredient;
+import com.demo.data.Taco;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
