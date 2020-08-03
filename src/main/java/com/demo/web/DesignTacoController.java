@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Slf4j
 @Controller
@@ -49,5 +50,11 @@ public class DesignTacoController {
         log.info("Processing design: " + design);
 
         return "redirect:/orders/current";
+    }
+
+    private List<Ingredient> filterByType(List<Ingredient> ingredients, Ingredient.Type type) {
+        return ingredients.stream()
+                .filter(x -> x.getType().equals(type))
+                .collect(Collectors.toList());
     }
 }
