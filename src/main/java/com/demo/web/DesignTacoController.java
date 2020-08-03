@@ -43,10 +43,10 @@ public class DesignTacoController {
     }
 
     @PostMapping
-    public String processDesign(Design desing) {
+    public String processDesign(Design design) {
         //Save the taco design
         //We'll do this in next lesson
-        log.info("Processing design: " + desing);
+        log.info("Processing design: " + design);
 
         return "redirect:/orders/current";
     }
