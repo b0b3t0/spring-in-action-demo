@@ -15,9 +15,9 @@ import javax.persistence.Id;
 public class Ingredient {
 
     @Id
-    private String id;
-    private String name;
-    private Type type;
+    private final String id;
+    private final String name;
+    private final Type type;
 
 
     public static enum Type {
