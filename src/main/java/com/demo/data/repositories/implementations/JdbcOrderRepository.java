@@ -1,7 +1,7 @@
 package com.demo.data.repositories.implementations;
 
-import com.demo.data.Order;
-import com.demo.data.Taco;
+import com.demo.data.models.Order;
+import com.demo.data.models.Taco;
 import com.demo.data.repositories.OrderRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,7 +1,7 @@
 package com.demo.data.repositories.implementations;
 
-import com.demo.data.Ingredient;
-import com.demo.data.Taco;
+import com.demo.data.models.Ingredient;
+import com.demo.data.models.Taco;
 import com.demo.data.repositories.TacoRepository;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;

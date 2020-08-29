@@ -1,8 +1,8 @@
 package com.demo.web;
 
-import com.demo.data.Ingredient;
-import com.demo.data.Order;
-import com.demo.data.Taco;
+import com.demo.data.models.Ingredient;
+import com.demo.data.models.Order;
+import com.demo.data.models.Taco;
 import com.demo.data.repositories.IngredientRepository;
 import com.demo.data.repositories.TacoRepository;
 import lombok.extern.slf4j.Slf4j;

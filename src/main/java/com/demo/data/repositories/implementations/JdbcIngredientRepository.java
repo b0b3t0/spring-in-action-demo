@@ -1,6 +1,6 @@
 package com.demo.data.repositories.implementations;
 
-import com.demo.data.Ingredient;
+import com.demo.data.models.Ingredient;
 import com.demo.data.repositories.IngredientRepository;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
