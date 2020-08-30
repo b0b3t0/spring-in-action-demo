@@ -10,7 +10,6 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-import javax.sql.DataSource;
 
 @Configuration
 @EnableWebSecurity
@@ -34,7 +33,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                     .antMatchers("/", "/**").permitAll()
                 .and()
                     .formLogin()
-                    .loginPage("/login");
+                    .loginPage("/login")
+                .and()
+                    .logout()
+                        .logoutSuccessUrl("/");
     }
 
     @Bean
