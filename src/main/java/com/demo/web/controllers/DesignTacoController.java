@@ -1,4 +1,4 @@
-package com.demo.web;
+package com.demo.web.controllers;
 
 import com.demo.data.models.Ingredient;
 import com.demo.data.models.Order;
