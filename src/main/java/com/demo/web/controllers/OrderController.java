@@ -5,7 +5,9 @@ import com.demo.data.models.User;
 import com.demo.data.repositories.OrderRepository;
 import com.demo.data.repositories.UserRepository;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,14 +19,20 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
 import javax.validation.Valid;
-import java.awt.print.Pageable;
 import java.security.Principal;
 
 @Slf4j
 @Controller
 @RequestMapping("/orders")
 @SessionAttributes("order")
+@ConfigurationProperties(prefix = "taco.orders")
 public class OrderController {
+
+    private int pageSize = 20;
+
+    public void setPageSize(int pageSize) {
+        this.pageSize = pageSize;
+    }
 
     private final OrderRepository orderRepository;
     private final UserRepository userRepository;
@@ -57,8 +65,8 @@ public class OrderController {
 
     @GetMapping
     public String ordersForUser(@AuthenticationPrincipal User user, Model model) {
-        Pageable pageable = (Pageable) PageRequest.of(0, 20);
-        model.addAttribute("orders", orderRepository.findByUserOrderByPlaceAtDesc(user, pageable));
+        Pageable pageable = PageRequest.of(0, pageSize);
+        model.addAttribute("orders", orderRepository.findByUserOrderByPlacedAtDesc(user, pageable));
 
         return "orderList";
     }
