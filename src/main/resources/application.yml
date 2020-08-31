@@ -4,3 +4,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password: b0b1b0b1
+
+taco:
+  orders:
+    pageSize: 15
